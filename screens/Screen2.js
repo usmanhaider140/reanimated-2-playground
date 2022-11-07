@@ -1,12 +1,11 @@
+import React from 'react';
+import {View, StyleSheet} from 'react-native';
 import Animated, {
   useSharedValue,
   useAnimatedStyle,
   withSpring,
-  withRepeat,
   useAnimatedGestureHandler,
 } from 'react-native-reanimated';
-import {View, StyleSheet} from 'react-native';
-import React, {useEffect} from 'react';
 import {PanGestureHandler} from 'react-native-gesture-handler';
 
 const CIRCLE_RADIUS = 100 * 2;

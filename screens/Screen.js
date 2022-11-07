@@ -12,7 +12,7 @@ const handleRotation = (rotation) => {
   return `${rotation * 360}deg`;
 };
 
-export default function AnimatedStyleUpdateExample(props) {
+export default function Screen1(props) {
   const progress = useSharedValue(1);
   const scale = useSharedValue(2);
   const animatedStyle = useAnimatedStyle(() => {
@@ -28,9 +28,9 @@ export default function AnimatedStyleUpdateExample(props) {
   }, [progress]);
 
   useEffect(() => {
-    progress.value = withRepeat(withSpring(0.5), -1, true);
+    progress.value = withRepeat(withSpring(0.1), 3, true);
     scale.value = withRepeat(withSpring(1, {damping: 10}), 3, true);
-  });
+  }, [progress, scale]);
 
   return (
     <View style={styles.container}>

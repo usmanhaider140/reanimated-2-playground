@@ -1,5 +1,5 @@
 import React from 'react';
-import {View, StyleSheet, Dimensions, Text} from 'react-native';
+import {View, StyleSheet, Dimensions} from 'react-native';
 import Animated, {
   Extrapolate,
   interpolate,
@@ -11,6 +11,8 @@ const SIZE = width * 0.7;
 
 const Page = ({title, index, translateX}) => {
   const inputRange = [(index - 1) * width, index * width, (index + 1) * width];
+
+  // Styles for the text
   const textStyle = useAnimatedStyle(() => {
     const translateY = interpolate(
       translateX.value,
@@ -33,6 +35,7 @@ const Page = ({title, index, translateX}) => {
       ],
     };
   });
+  // Style for the background
   const animatedStyle = useAnimatedStyle(() => {
     const scale = interpolate(
       translateX.value,
